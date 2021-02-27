@@ -13,15 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge.model
 
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Shapes
-import androidx.compose.ui.unit.dp
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.example.androiddevchallenge.bean.Pet
+import com.example.androiddevchallenge.bean.myLovelyPets
 
-val shapes = Shapes(
-    // small = RoundedCornerShape(8.dp),
-    small = RoundedCornerShape(18.dp, 4.dp, 4.dp, 4.dp),
-    medium = RoundedCornerShape(38.dp, 4.dp, 4.dp, 4.dp),
-    large = RoundedCornerShape(0.dp)
-)
+class PetViewModel : ViewModel() {
+    private val petsLiveData = MutableLiveData(myLovelyPets)
+
+    val pets: LiveData<List<Pet>> = petsLiveData
+}

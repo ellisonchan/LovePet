@@ -9,5 +9,41 @@
       or implied. See the License for the specific language governing permissions and limitations under
       the License.
       -->
-    <string name="app_name">AndroidDevChallenge</string>
+    <string name="app_name">Love Pet</string>
+    <string name="activity_list_name">Adopt a pet</string>
+
+    <string name="zang_ao_name">Ulrica</string>
+    <string name="zang_ao_type">Tibetan Mastiff,藏獒</string>
+    <string name="zang_ao_age">5 years old</string>
+    <string name="zang_ao_info">A large-sized dog with a fierce personality. Its coat color is mostly iron-clad gold, yellow, black (black is not pure black, but slightly white hair on the chest and limbs), etc. It is native to the Qinghai-Tibet Plateau.</string>
+
+    <string name="hachi_name">Ace</string>
+    <string name="hachi_type">Hachi,秋田犬</string>
+    <string name="hachi_age">3 years old</string>
+    <string name="hachi_info">A kind of sharp-mouthed dog, strong, and sports-loving breed. It was used as a dog fire guard dog in Japan, and now it has become a very popular family dog all over the world.</string>
+
+    <string name="bosi_name">Claudia</string>
+    <string name="bosi_type">Persian Cat,波斯猫</string>
+    <string name="bosi_age">2 years old</string>
+    <string name="bosi_info">A breed born in 1860 after more than 100 years of selection and breeding in the UK based on the native longhair cats of Afghanistan and the Angora longhair cats of Turkey.</string>
+
+    <string name="lanmao_name">Kate</string>
+    <string name="lanmao_type">Blue Cat,蓝猫</string>
+    <string name="lanmao_age">1 year old</string>
+    <string name="lanmao_info">In history, it was called the Achiange Blue Cat, and it had three different names. At first it was the Achianji blue cat. It was not named the Russian blue cat until the 1940s, and for a while it was called the Maltese cat.</string>
+
+    <string name="bianse_name">Sapp</string>
+    <string name="bianse_type">Chamaeleonidae,变色龙</string>
+    <string name="bianse_age">3 years old</string>
+    <string name="bianse_info">The reptiles of the Chamaeleontidae (Chamaeleontidae) of the Sauria suborder (Sauria) are native to the Eastern Hemisphere and are mainly arboreal. It is characterized by changes in body color.</string>
+
+    <string name="wugui_name">Dolly</string>
+    <string name="wugui_type">Turtle,乌龟</string>
+    <string name="wugui_age">10 years old</string>
+    <string name="wugui_info">A semi-aquatic, semi-dwelling, semi-terrestrial reptile. Mainly inhabit rivers, lakes, reservoirs, ponds and other waters.</string>
+
+<!--    <string name="jinyu_name">Gold fish</string>-->
+<!--    <string name="jinyu_name_more">Gold fish,金鱼</string>-->
+<!--    <string name="jinyu_type">fish</string>-->
+<!--    <string name="jinyu_info">Cyps are evolved from wild red-yellow crucian carp. As far back as the Jin Dynasty, there was a written record of "Red Scale Fish"—Goldfish, which can be called the quintessence of China.</string>-->
 </resources>

@@ -18,21 +18,79 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.androiddevchallenge.ui.theme.MyTheme
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.androiddevchallenge.ui.MainNavigation
+import com.example.androiddevchallenge.ui.theme.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp()
+                GetPetsNew()
             }
         }
+    }
+}
+
+@Preview("Light Theme", widthDp = 360, heightDp = 640)
+@Composable
+fun GetPetsNew() {
+    Spacer(Modifier.sizeIn(3.dp))
+    MainNavigation()
+}
+
+@Preview("Light Theme", widthDp = 360, heightDp = 640)
+@Composable
+fun GetPets() {
+//    Column {
+//        Text("Zang ao dog")
+//        Text("Bosi cat")
+//        Text("Bianse dragon")
+//        Text("Wu gui")
+//        Text("Gold fish")
+//    }
+
+    val image = painterResource(R.drawable.zang_ao_icon)
+    // val image = resources().getDrawable(R.drawable.zang_ao_icon)
+        Column(
+        modifier = Modifier.padding(32.dp)
+    ) {
+
+            val imageModifier = Modifier
+                .requiredHeight(32.dp)
+                .requiredWidth(32.dp)
+
+            Image(
+                painter = image,
+                contentDescription = "zang ao",
+                contentScale = ContentScale.Crop,
+                // modifier = Modifier.aspectRatio(1f)
+                modifier = imageModifier
+            )
+        Text("Zang ao")
+        Text("Hachi")
+        Text("Bosi cat")
+        Text("Bianse dragon")
+        Text("Wu gui")
+        Text("Gold fish")
     }
 }
 
@@ -40,7 +98,8 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+        // Text(text = "My lovely pets")
+        Text(text = stringResource(id = R.string.activity_list_name))
     }
 }
 
@@ -48,7 +107,8 @@ fun MyApp() {
 @Composable
 fun LightPreview() {
     MyTheme {
-        MyApp()
+        // MyApp()
+        GetPets()
     }
 }
 
@@ -56,6 +116,7 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        MyApp()
+        // MyApp()
+        GetPets()
     }
 }

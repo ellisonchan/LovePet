@@ -21,3 +21,13 @@ val purple200 = Color(0xFFBB86FC)
 val purple500 = Color(0xFF6200EE)
 val purple700 = Color(0xFF3700B3)
 val teal200 = Color(0xFF03DAC5)
+
+val toolBarColor = Color(0xFFFBDE4B)
+val screenBGColor = toolBarColor
+// Color(0xFFcbc547)
+val nameColor = Color(0xFF411445)
+val itemCardColor = Color(0xFFf2eada)
+val infoCardColor = itemCardColor
+    // Color(0xFFffce7b)
+val infoColor = nameColor
+    // Color(0xFF72777b)
