@@ -44,6 +44,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.bean.Pet
 import com.example.androiddevchallenge.model.PetViewModel
+import com.example.androiddevchallenge.ui.theme.nameColor
 
 @Composable
 fun PetListFragment(
@@ -93,7 +94,12 @@ fun MainNavigation() {
         Scaffold(
             topBar = {
                 TopAppBar(
-                    title = { Text(text = title) },
+                    title = {
+                        Text(
+                            text = title,
+                            color = nameColor
+                        )
+                    },
                     navigationIcon = if (canPop) {
                         {
                             IconButton(
@@ -101,7 +107,7 @@ fun MainNavigation() {
                                     navController.popBackStack()
                                 }
                             ) {
-                                Icon(Icons.Outlined.ArrowBack, "back")
+                                Icon(Icons.Outlined.ArrowBack, "back", tint = nameColor)
                             }
                         }
                     } else {
@@ -109,7 +115,7 @@ fun MainNavigation() {
                             IconButton(
                                 onClick = {}
                             ) {
-                                Icon(painterResource(id = R.drawable.ic_launcher_foreground), "back")
+                                Icon(painterResource(id = R.drawable.ic_launcher_foreground), "main", tint = nameColor)
                             }
                         }
                     },
