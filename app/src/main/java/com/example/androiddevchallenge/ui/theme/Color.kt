@@ -28,6 +28,6 @@ val screenBGColor = toolBarColor
 val nameColor = Color(0xFF411445)
 val itemCardColor = Color(0xFFf2eada)
 val infoCardColor = itemCardColor
-    // Color(0xFFffce7b)
+// Color(0xFFffce7b)
 val infoColor = nameColor
-    // Color(0xFF72777b)
+// Color(0xFF72777b)

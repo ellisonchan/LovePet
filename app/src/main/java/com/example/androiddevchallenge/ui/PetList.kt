@@ -15,7 +15,7 @@
  */
 package com.example.androiddevchallenge.ui
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -27,8 +27,10 @@ import com.example.androiddevchallenge.bean.Pet
 fun PetList(pets: List<Pet>, onClick: (Pet) -> Unit) {
     val scrollState = rememberLazyListState()
 
-    LazyColumn(modifier = Modifier.fillMaxWidth(),
-        state = scrollState) {
+    LazyColumn(
+        modifier = Modifier.fillMaxWidth(),
+        state = scrollState
+    ) {
 
         items(pets, key = { pet -> pet.id }) { pet ->
             PetItem(pet = pet, onClick = { onClick(pet) })

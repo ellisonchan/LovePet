@@ -18,9 +18,16 @@ package com.example.androiddevchallenge.ui
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.material.Card
-
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -30,7 +37,6 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.bean.Pet
@@ -51,10 +57,13 @@ fun PetItem(pet: Pet, onClick: () -> Unit) {
     Box(
         // modifier = Modifier.padding(6.dp)
         // More horizontal padding when 2 item.
-        modifier = Modifier.padding(if (pet.id % 2 == 0) 48.dp else 12.dp,
+        modifier = Modifier.padding(
+            if (pet.id % 2 == 0) 48.dp else 12.dp,
             6.dp,
             if (pet.id % 2 == 0) 12.dp else 48.dp,
-            6.dp)) {
+            6.dp
+        )
+    ) {
         Card(
             shape = shapes.small,
             elevation = 8.dp,
@@ -67,7 +76,7 @@ fun PetItem(pet: Pet, onClick: () -> Unit) {
                     // .width(if (pet.id % 2 == 0) 200.dp else 12.dp)
                     // .width(300.dp)
                     .height(82.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 val image: Painter = painterResource(id = pet.icon)
                 Image(
@@ -80,7 +89,7 @@ fun PetItem(pet: Pet, onClick: () -> Unit) {
                 Spacer(Modifier.sizeIn(16.dp))
 
                 Column(modifier = Modifier.padding(8.dp)) {
-                // Column(verticalArrangement = Arrangement.Center) {
+                    // Column(verticalArrangement = Arrangement.Center) {
                     Text(
                         text = stringResource(id = pet.name),
                         style = MaterialTheme.typography.h6,

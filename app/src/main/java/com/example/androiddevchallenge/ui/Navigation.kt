@@ -46,7 +46,10 @@ import com.example.androiddevchallenge.bean.Pet
 import com.example.androiddevchallenge.model.PetViewModel
 
 @Composable
-fun PetListFragment(navController: NavController, setTitle: (String) -> Unit, petViewModel: PetViewModel = viewModel()
+fun PetListFragment(
+    navController: NavController,
+    setTitle: (String) -> Unit,
+    petViewModel: PetViewModel = viewModel()
 ) {
     setTitle(stringResource(id = R.string.activity_list_name))
     val pets: State<List<Pet>> = petViewModel.pets.observeAsState(emptyList())
@@ -101,13 +104,15 @@ fun MainNavigation() {
                                 Icon(Icons.Outlined.ArrowBack, "back")
                             }
                         }
-                    } else { {
-                        IconButton(
-                            onClick = {}
-                        ) {
-                            Icon(painterResource(id = R.drawable.ic_launcher_foreground), "back")
+                    } else {
+                        {
+                            IconButton(
+                                onClick = {}
+                            ) {
+                                Icon(painterResource(id = R.drawable.ic_launcher_foreground), "back")
+                            }
                         }
-                    } },
+                    },
                 )
             },
             scaffoldState = scaffoldState

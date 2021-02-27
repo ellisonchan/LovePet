@@ -16,7 +16,14 @@
 package com.example.androiddevchallenge.ui
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
@@ -48,8 +55,10 @@ fun PetInfoPreview() {
 @Composable
 fun PetInfo(pet: Pet) {
     // Box(modifier = Modifier.padding(8.dp)) {
-    Box(modifier = Modifier.padding(8.dp),
-        contentAlignment = Alignment.Center) {
+    Box(
+        modifier = Modifier.padding(8.dp),
+        contentAlignment = Alignment.Center
+    ) {
         Card(
             shape = shapes.medium,
             // elevation = 8.dp,
@@ -59,7 +68,7 @@ fun PetInfo(pet: Pet) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .verticalScroll(rememberScrollState()),
-                        verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.Center
             ) {
                 val image: Painter = painterResource(id = pet.icon)
                 Image(
