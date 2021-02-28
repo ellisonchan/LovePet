@@ -29,5 +29,9 @@ val nameColor = Color(0xFF411445)
 val itemCardColor = Color(0xFFf2eada)
 val infoCardColor = itemCardColor
 // Color(0xFFffce7b)
+val infoButtonColor = nameColor
 val infoColor = nameColor
 // Color(0xFF72777b)
+val likeColor = Color(0xFF888888)
+val likedColor = nameColor
+// Color(0xFFd4237a)

@@ -11,6 +11,7 @@
       -->
     <string name="app_name">Love Pet</string>
     <string name="activity_list_name">Adopt a pet</string>
+    <string name="activity_info_btn">adopt me</string>
 
     <string name="zang_ao_name">Ulrica</string>
     <string name="zang_ao_type">Tibetan Mastiff,藏獒</string>

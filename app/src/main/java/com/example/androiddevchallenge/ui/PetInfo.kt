@@ -19,17 +19,26 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Card
+import androidx.compose.material.Icon
+import androidx.compose.material.IconToggleButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
@@ -39,10 +48,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.bean.Pet
 import com.example.androiddevchallenge.bean.myLovelyPets
+import com.example.androiddevchallenge.ui.theme.infoButtonColor
 import com.example.androiddevchallenge.ui.theme.infoCardColor
 import com.example.androiddevchallenge.ui.theme.infoColor
+import com.example.androiddevchallenge.ui.theme.likeColor
+import com.example.androiddevchallenge.ui.theme.likedColor
 import com.example.androiddevchallenge.ui.theme.nameColor
 import com.example.androiddevchallenge.ui.theme.shapes
 
@@ -54,9 +67,8 @@ fun PetInfoPreview() {
 
 @Composable
 fun PetInfo(pet: Pet) {
-    // Box(modifier = Modifier.padding(8.dp)) {
     Box(
-        modifier = Modifier.padding(8.dp),
+        modifier = Modifier.fillMaxHeight().padding(12.dp),
         contentAlignment = Alignment.Center
     ) {
         Card(
@@ -75,14 +87,36 @@ fun PetInfo(pet: Pet) {
                     painter = image,
                     contentDescription = stringResource(id = pet.name),
                     contentScale = ContentScale.Crop,
-                    modifier = Modifier.aspectRatio(1f)
+                    modifier = Modifier.aspectRatio(1.3f)
                 )
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        text = stringResource(id = pet.name),
-                        style = MaterialTheme.typography.h6,
-                        color = nameColor,
-                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            modifier = Modifier.weight(1f).align(Alignment.CenterVertically),
+                            text = stringResource(id = pet.name),
+                            style = MaterialTheme.typography.h6,
+                            color = nameColor,
+                        )
+
+                        val checkedState = remember { mutableStateOf(false) }
+                        IconToggleButton(
+                            modifier = Modifier.align(Alignment.CenterVertically).size(18.dp),
+                            checked = checkedState.value,
+                            onCheckedChange = {
+                                checkedState.value = it
+                            }
+                        ) {
+                            Icon(
+                                painterResource(id = R.drawable.ic_like),
+                                contentDescription = "like",
+                                modifier = Modifier.size(18.dp),
+                                tint = if (checkedState.value) likedColor else likeColor
+                            )
+                        }
+                    }
                     Text(
                         text = stringResource(id = pet.age),
                         fontStyle = FontStyle.Italic,
@@ -102,6 +136,18 @@ fun PetInfo(pet: Pet) {
                         style = MaterialTheme.typography.body1,
                         color = infoColor,
                     )
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Button(
+                        modifier = Modifier.fillMaxWidth(),
+                        onClick = {},
+                        shape = shapes.large,
+                        colors = ButtonDefaults.buttonColors(backgroundColor = infoButtonColor)
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.activity_info_btn),
+                            // color = infoColor,
+                        )
+                    }
                 }
             }
         }
